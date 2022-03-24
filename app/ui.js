@@ -24,9 +24,21 @@ const onSignInFailure = function () {
   $('#game-display').hide()
 }
 
+const onSignOutSuccess = function () {
+  $('#game-display').html('<p>You are signed out!</p>')
+
+  $('form').trigger('reset')
+}
+
+const onSignOutFailure = function () {
+  $('#error-message').html('<p>Error: You must be signed in to sign out!</p>')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
-  onSignInFailure
+  onSignInFailure,
+  onSignOutSuccess,
+  onSignOutFailure
 }

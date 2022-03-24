@@ -23,7 +23,7 @@ const signOut = function () {
   // console.log(store)
   return $.ajax({
     method: 'DELETE',
-    url: 'https://tic-tac-toe-api-production.herokuapp.com/sign-in',
+    url: 'https://tic-tac-toe-api-production.herokuapp.com/sign-out',
     headers: {
       Authorization: 'Bearer ' + store.user.token
       // Content-Type:

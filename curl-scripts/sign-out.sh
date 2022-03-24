@@ -2,7 +2,7 @@
 
 #!/bin/bash
 
-curl "https://library-express-api.herokuapp.com/sign-in" \
+curl "https://tic-tac-toe-api-production.herokuapp.com/sign-out" \
   --include \
   --request DELETE \
   --header "Content-Type: application/json" \

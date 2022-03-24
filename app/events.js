@@ -31,13 +31,15 @@ const onSignIn = function (event) {
     .catch(() => gameUi.onSignInFailure())
 }
 
-const onSignOut = function (){
-    gameApi.signOut()
-    .then((response) => gameUi.onsignOutSc)
+const onSignOut = function () {
+  gameApi.signOut()
+    .then((response) => gameUi.onSignOutSuccess(response))
+    .catch(() => gameUi.onSignOutFailure())
 }
 
 module.exports = {
   // onSignUp: onSignUp
   onSignUp,
-  onSignIn
+  onSignIn,
+  onSignOut
 }
