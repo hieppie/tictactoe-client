@@ -3,7 +3,10 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+const gameEvents = require('./events')
 
 $(() => {
-  // your JS code goes here
+  $('#sign-up-form').on('submit', gameEvents.onSignUp)
+  $('#sign-in-form').on('submit', gameEvents.onSignIn)
+  $('#sign-out-button').on('click', gameEvents.onSignOut)
 })
