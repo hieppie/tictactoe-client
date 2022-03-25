@@ -2,7 +2,7 @@
 const store = require('./store')
 
 const onSignUpSuccess = function () {
-  $('#game-display').html('Signed Up Successfully!')
+  $('#success-message').html('Signed Up Successfully!')
   $('form').trigger('reset')
 }
 
@@ -11,23 +11,25 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (response) {
-  $('#sign-up-div').hide()
   $('form').trigger('reset')
-  $('#game-display').html('You are signed in!')
+
+  $('#sign-up-div, #error-message, #sign-out-message, #sign-in-div').hide()
+  $('#success-message').html('You are signed in and ready to play!')
+  $('#sign-out-div, #gameboard').show()
   console.log(response)
   // store data from the response in mt store object
   store.user = response.user
 }
 
 const onSignInFailure = function () {
+  $('#success-message').hide()
   $('#error-message').html('Error: Can NOT Sign in!')
-  $('#game-display').hide()
 }
 
 const onSignOutSuccess = function () {
-  $('#game-display').html('<p>You are signed out!</p>')
-
+  $('#success-message, #error-message, #sign-out-div, #gameboard').hide()
   $('form').trigger('reset')
+  $('#sign-up-div').show()
 }
 
 const onSignOutFailure = function () {

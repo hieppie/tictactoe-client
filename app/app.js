@@ -8,5 +8,6 @@ const gameEvents = require('./events')
 $(() => {
   $('#sign-up-form').on('submit', gameEvents.onSignUp)
   $('#sign-in-form').on('submit', gameEvents.onSignIn)
+  $('#sign-out-div, #gameboard').hide()
   $('#sign-out-button').on('click', gameEvents.onSignOut)
 })

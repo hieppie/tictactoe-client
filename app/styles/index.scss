@@ -1,10 +1,29 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+    margin: 40px
+}
 
-#game-display {
+#success-message {
     color: green
 }
 
 #error-message {
     color:red
+}
+
+.box {
+  align-items: center;
+  background-color: grey;
+  border: 1px solid white;
+  color: white;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 80px;
+  justify-content: center;
+}
+
+
+.alt-color {
+  background-color: cyan;
 }
