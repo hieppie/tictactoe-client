@@ -15,7 +15,7 @@ const onSignInSuccess = function (response) {
 
   $('#sign-up-div, #error-message, #sign-out-message, #sign-in-div').hide()
   $('#success-message').html('You are signed in and ready to play!')
-  $('#sign-out-div, #gameboard').show()
+  $('#sign-out-div, #game-board, #game-start-button').show()
   console.log(response)
   // store data from the response in mt store object
   store.user = response.user
@@ -27,9 +27,10 @@ const onSignInFailure = function () {
 }
 
 const onSignOutSuccess = function () {
-  $('#success-message, #error-message, #sign-out-div, #gameboard').hide()
+  $('#sign-out-message').html('<p>you are signed out!</p>')
+  $('#success-message, #error-message, #sign-out-div, #game-board').hide()
   $('form').trigger('reset')
-  $('#sign-up-div').show()
+  $('#sign-up-div, #sign-in-div').show()
 }
 
 const onSignOutFailure = function () {
