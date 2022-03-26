@@ -43,6 +43,25 @@ const startGame = function () {
   })
 }
 
+const updateGame = function () {
+  return $.ajax({
+    method: 'PATCH',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: 0,
+          value: 'x'
+        },
+        over: false
+      }
+    }
+  })
+}
+
 // const indexGames = function () {
 //   return $.ajax({
 //     method: 'GET',
@@ -69,6 +88,7 @@ module.exports = {
   signIn,
   signOut,
   startGame,
+  updateGame
   // indexGames,
   // showGame
 }

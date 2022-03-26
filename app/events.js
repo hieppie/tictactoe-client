@@ -45,6 +45,16 @@ const onStartGame = function () {
     })
     .then(() => console.log(store))
 }
+
+const onIndex0 = function (data) {
+  gameApi
+    .updateGame(data)
+    // .then((response) => {
+    //   store.game = response.game.cells
+    // })
+    // .then(() => console.log(store))
+}
+
 let userX = true
 const onBoxClick = function () {
   console.log('this click this click')
@@ -85,7 +95,8 @@ module.exports = {
   onSignIn,
   onSignOut,
   onStartGame,
-  onBoxClick
+  onBoxClick,
+  onIndex0
   // onIndexGames,
   // onShowGame
 }
