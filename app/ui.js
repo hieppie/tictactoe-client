@@ -37,13 +37,29 @@ const onSignOutFailure = function () {
   $('#error-message').html('<p>Error: You must be signed in to sign out!</p>')
 }
 
+const clearBoard = function () {
+  // set value = to null
+  $('.cell').text('')
+}
+
 const onStartGameSuccess = function (response) {
   // storing user and game to use when update game. For token and game ID
+  console.log(response)
   store.game = response.game
+  clearBoard()
   // store.user = response.user
 }
 const onStartGameFailure = function () {
   $('#error-message').html('Error: Can Not Start Game. check your codes')
+}
+
+const onUpdateGameSuccess = function (response) {
+  console.log(response)
+  store.game = response.game
+}
+
+const onUpdateGameFailure = function () {
+  $('#error-message').html('Error: Can Not update game move!')
 }
 
 module.exports = {
@@ -54,5 +70,8 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onStartGameSuccess,
-  onStartGameFailure
+  onStartGameFailure,
+  onUpdateGameSuccess,
+  onUpdateGameFailure,
+  clearBoard
 }

@@ -43,7 +43,7 @@ const startGame = function (data) {
   })
 }
 
-const updateGame = function (data) {
+const updateGame = function (cellIndex, userX, gameOver) {
   return $.ajax({
     method: 'PATCH',
     url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
@@ -53,10 +53,10 @@ const updateGame = function (data) {
     data: {
       game: {
         cell: {
-          index: 0,
-          value: 'x'
+          index: cellIndex,
+          value: userX
         },
-        over: false
+        over: gameOver
       }
     }
   })
