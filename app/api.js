@@ -31,8 +31,8 @@ const signOut = function () {
   })
 }
 
-const startGame = function () {
-  // console.log()
+const startGame = function (data) {
+  console.log(data)
   return $.ajax({
     method: 'POST',
     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
@@ -43,7 +43,7 @@ const startGame = function () {
   })
 }
 
-const updateGame = function () {
+const updateGame = function (data) {
   return $.ajax({
     method: 'PATCH',
     url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,

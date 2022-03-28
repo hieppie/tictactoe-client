@@ -17,7 +17,7 @@ const onSignInSuccess = function (response) {
   $('#success-message').html('You are signed in and ready to play!')
   $('#sign-out-div, #game-board, #game-start-button').show()
   console.log(response)
-  // store data from the response in mt store object
+  // store data from the response in mt store object. store this to start a game which need token from user
   store.user = response.user
 }
 
@@ -30,11 +30,20 @@ const onSignOutSuccess = function () {
   $('#sign-out-message').html('<p>you are signed out!</p>')
   $('#success-message, #error-message, #sign-out-div, #game-board').hide()
   $('form').trigger('reset')
-  $('#sign-up-div, #sign-in-div').show()
+  $('#sign-up-div, #sign-in-div, #game-board').show()
 }
 
 const onSignOutFailure = function () {
   $('#error-message').html('<p>Error: You must be signed in to sign out!</p>')
+}
+
+const onStartGameSuccess = function (response) {
+  // storing user and game to use when update game. For token and game ID
+  store.game = response.game
+  // store.user = response.user
+}
+const onStartGameFailure = function () {
+  $('#error-message').html('Error: Can Not Start Game. check your codes')
 }
 
 module.exports = {
@@ -43,5 +52,7 @@ module.exports = {
   onSignInSuccess,
   onSignInFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onStartGameSuccess,
+  onStartGameFailure
 }
