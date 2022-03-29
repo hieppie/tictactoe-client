@@ -40,13 +40,6 @@ const onSignOut = function () {
 
 // const clearBoard = function ()
 
-const onStartGame = function () {
-  gameApi.startGame()
-    .then((response) => gameUi.onStartGameSuccess(response))
-    // .then(() => console.log(store))
-  $('.cell').on('click', onBoxClick)
-}
-
 const onUpdateGame = function () {
   gameApi.updateGame()
     .then((response) => gameUi.onUpdateGameSuccess(response))
@@ -57,132 +50,104 @@ const onUpdateGame = function () {
 }
 
 let gameOver = false
-// const board = [null, null, null, null, null, null, null, null, null]
 let userX = true
-// const onClearBoard = function () {
-//   for (let i = 0; i < board.length; i++) {
-//     board[i] = null
-//   }
-// }
+
+const onStartGame = function () {
+  gameApi.startGame().then((response) => gameUi.onStartGameSuccess(response))
+  // .then(() => console.log(store))
+  // start the onBoxClick function when onStartGame starts
+  $('.cell').on('click', onBoxClick)
+  // set game to always start with user X
+  userX = true
+  // set game over to always start with game NOt over
+  gameOver = false
+}
 
 const onBoxClick = function (data) {
-  // data:{
-  //     store.game.cell.index = 0
-  //     store.game.cell.value = 'x'
-  //     store.game.over = false
-  // }}}
-
-  // store.game.cell.index = 1
-  // store.game.cell.value = 'x'
-  // store.game.over = false
-
-  // const board = response.game.cells
   // using getAttributes to get index number from data=cell-index
-  // const userValue = board
-  const cellIndex = this.getAttribute('data-cell-index')
-  // console.log(cellIndex)
-  if (store.game.cells[cellIndex]) {
+  const index = this.getAttribute('data-cell-index')
+
+  const userValue = store.game.cells
+  // console.log(index)
+  if (userValue[index]) {
     return
   }
-  // console.log(cellIndex)
+  // console.log(index)
   if (userX) {
     $(this).text('x')
-    store.game.cells[cellIndex] = 'x'
+    userValue[index] = 'x'
   } else {
     $(this).text('o')
-    store.game.cells[cellIndex] = 'o'
+    userValue[index] = 'o'
   }
-  console.log(store.game.cells)
   userX = !userX
-  // row check
+
+  // row check winning conditions
   if (
-    store.game.cells[0] === store.game.cells[1] &&
-		store.game.cells[1] === store.game.cells[2] &&
-		store.game.cells[2] != ''
+    userValue[0] === userValue[1] && userValue[1] === userValue[2] && userValue[2] !== ''
   ) {
-    $('#winner-alert').text(store.game.cells[cellIndex] + ' Is the Winner')
+    $('#winner-alert').text(userValue[index] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
   } else if (
-    store.game.cells[3] === store.game.cells[4] &&
-		store.game.cells[4] === store.game.cells[5] &&
-		store.game.cells[5] != ''
+    userValue[3] === userValue[4] && userValue[4] === userValue[5] && userValue[5] !== ''
   ) {
-    $('#winner-alert').text(store.game.cells[cellIndex] + ' Is the Winner')
+    $('#winner-alert').text(userValue[index] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
   } else if (
-    store.game.cells[6] === store.game.cells[7] &&
-		store.game.cells[7] === store.game.cells[8] &&
-		store.game.cells[8] != ''
+    userValue[6] === userValue[7] && userValue[7] === userValue[8] && userValue[8] !== ''
   ) {
-    $('#winner-alert').text(store.game.cells[cellIndex] + ' Is the Winner')
+    $('#winner-alert').text(userValue[index] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
   }
-  // check column
+  // check column wining conditions
   else if (
-    store.game.cells[0] === store.game.cells[3] &&
-		store.game.cells[3] === store.game.cells[6] &&
-		store.game.cells[6] != ''
+    userValue[0] === userValue[3] && userValue[3] === userValue[6] && userValue[6] !== ''
   ) {
-    $('#winner-alert').text(store.game.cells[cellIndex] + ' Is the Winner')
+    $('#winner-alert').text(userValue[index] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
   } else if (
-    store.game.cells[1] === store.game.cells[4] &&
-		store.game.cells[4] === store.game.cells[7] &&
-		store.game.cells[7] != ''
+    userValue[1] === userValue[4] && userValue[4] === userValue[7] && userValue[7] !== ''
   ) {
-    $('#winner-alert').text(store.game.cells[cellIndex] + ' Is the Winner')
+    $('#winner-alert').text(userValue[index] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
   } else if (
-    store.game.cells[2] === store.game.cells[5] &&
-		store.game.cells[5] === store.game.cells[8] &&
-		store.game.cells[8] != ''
+    userValue[2] === userValue[5] && userValue[5] === userValue[8] && userValue[8] !== ''
   ) {
-    $('#winner-alert').text(store.game.cells[cellIndex] + ' Is the Winner')
+    $('#winner-alert').text(userValue[index] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
   }
 
-  // check diagonals
+  // check diagonals winning conditions
   else if (
-    store.game.cells[0] === store.game.cells[4] &&
-		store.game.cells[4] === store.game.cells[8] &&
-		store.game.cells[8] != ''
+    userValue[0] === userValue[4] && userValue[4] === userValue[8] && userValue[8] !== ''
   ) {
-    $('#winner-alert').text(store.game.cells[cellIndex] + ' Is the Winner')
+    $('#winner-alert').text(userValue[index] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
+    $('.cell').off('click')
   } else if (
-    store.game.cells[2] === store.game.cells[4] &&
-		store.game.cells[4] === store.game.cells[6] &&
-		store.game.cells[6] != ''
+    userValue[2] === userValue[4] && userValue[4] === userValue[6] && userValue[6] !== ''
   ) {
-    $('#winner-alert').text(store.game.cells[cellIndex] + ' Is the Winner')
+    $('#winner-alert').text(userValue[index] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
   }
-  // if not winner then tie
+  // if no winner then tie
   else if (
-    store.game.cells[0] &&
-		store.game.cells[1] !== '' &&
-		store.game.cells[2] !== '' &&
-		store.game.cells[3] !== '' &&
-		store.game.cells[4] !== '' &&
-		store.game.cells[5] !== '' &&
-    store.game.cells[6] !== '' &&
-		store.game.cells[7] !== '' &&
-		store.game.cells[8] !== ''
+    userValue[0] && userValue[1] !== '' && userValue[2] !== '' && userValue[3] !== '' && userValue[4] !== '' && userValue[5] !== '' && userValue[6] !== '' && userValue[7] !== '' && userValue[8] !== ''
   ) {
     gameOver = !gameOver
     console.log(gameOver)
@@ -190,22 +155,11 @@ const onBoxClick = function (data) {
     $('.cell').off('click')
   }
 
-  // function reset () {
-  //   // iterate through all sqr buttons and clear their values
-  //   let reset-button'
-  //   for (let i = 1; i < board.length; i++) {
-  //   #reset-button = 'sqr' + i
-  //     document.getElementById('reset-button').value = ''
-  //   }
-
-  //   // reset squares to empty Array
-  //   board = []
-
   //   // reset the global variable for the game being over
   //   gameOver = false
-  console.log(cellIndex, store.game.cells[cellIndex], gameOver)
-  gameApi.updateGame(cellIndex, store.game.cells[cellIndex], gameOver)
-  // console.log(cellIndex, userValue, gameOver)
+  console.log(index, userValue[index], gameOver)
+  gameApi
+    .updateGame(index, userValue[index], gameOver)
 }
 
 module.exports = {

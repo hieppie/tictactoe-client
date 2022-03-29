@@ -45,7 +45,7 @@ const clearBoard = function () {
 
 const onStartGameSuccess = function (response) {
   // storing user and game to use when update game. For token and game ID
-  console.log(response)
+  // console.log(response)
   store.game = response.game
   clearBoard()
   $('.cell').on('click')

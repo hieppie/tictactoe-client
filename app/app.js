@@ -12,22 +12,11 @@ $(() => {
 
   $('#game-start-button').on('click', gameEvents.onStartGame)
   $('#sign-out-div, #game-start-button, #game').hide()
-  $('.cell').on('click', gameEvents.onBoxClick)
-  
+  // $('#game-start-button').on('click', gameEvents.onStartGame)
+  $('#play-again-button').on('click', gameEvents.onStartGame)
+
   // $('#reset-button').on('click', gameEvents.onStartGame)
   // $('#reset-button').on('click', gameEvents.onClearBoard())
   // $('.cell').on('click', gameEvents.onUpdateGame)
   // $('.cell').on('click', function () { console.log(this.getAttribute('data-cell-index')) })
-
-  // $('#index-games').on('click', gameEvents.onIndexGames)
-  // $('#show-game').on('sumbit', gameEvents.onShowGame)
-  // $('#0'.on('click', gameEvents.))
-  // $('#1'.on('click', gameEvents.))
-  // $('#2'.on('click', gameEvents.))
-  // $('#3'.on('click', gameEvents.))
-  // $('#4'.on('click', gameEvents.))
-  // $('#5'.on('click', gameEvents.))
-  // $('#6'.on('click', gameEvents.))
-  // $('#7'.on('click', gameEvents.))
-  // $('#8'.on('click', gameEvents.))
 })
