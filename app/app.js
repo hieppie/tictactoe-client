@@ -11,7 +11,7 @@ $(() => {
   $('#sign-out-button').on('click', gameEvents.onSignOut)
 
   $('#game-start-button').on('click', gameEvents.onStartGame)
-  $('#sign-out-div, #game-start-button, #game').hide()
+  // $('#sign-out-div, #game-start-button, #game').hide()
   // $('#game-start-button').on('click', gameEvents.onStartGame)
   $('#play-again-button').on('click', gameEvents.onStartGame)
 

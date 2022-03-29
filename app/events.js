@@ -75,10 +75,10 @@ const onBoxClick = function (data) {
   // console.log(index)
   if (userX) {
     $(this).text('x')
-    userValue[index] = 'x'
+    userValue[index] = 'pink slug'
   } else {
     $(this).text('o')
-    userValue[index] = 'o'
+    userValue[index] = 'green slug'
   }
   userX = !userX
 
@@ -155,8 +155,6 @@ const onBoxClick = function (data) {
     $('.cell').off('click')
   }
 
-  //   // reset the global variable for the game being over
-  //   gameOver = false
   console.log(index, userValue[index], gameOver)
   gameApi
     .updateGame(index, userValue[index], gameOver)

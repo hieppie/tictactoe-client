@@ -3,28 +3,28 @@ const store = require('./store')
 // const gameEvents = require('./events')
 
 const onSignUpSuccess = function () {
-  $('#success-message').html('Signed Up Successfully!')
+  $('#sign-up-message').html('Signed Up Successfully!').css('color', 'green')
   $('form').trigger('reset')
 }
 
 const onSignUpFailure = function () {
-  $('#error-message').html('Error: Can NOT Sign up. That email has been used')
+  $('#sign-up-message').html('Error: Can NOT Sign up. That email has been used').css('color', 'white')
 }
 
 const onSignInSuccess = function (response) {
   $('form').trigger('reset')
 
-  $('#sign-up-div, #error-message, #sign-out-message, #sign-in-div').hide()
-  $('#success-message').html('You are signed in and ready to play!')
-  $('#sign-out-div, #game-board, #game-start-button').show()
+  // $('#sign-up-div, #error-message, #sign-out-message, #sign-in-div').hide()
+  $('#sign-in-message').html('You are signed in and ready to play!').css('color', 'green')
+  // $('#sign-out-div, #game-board, #game-start-button').show()
   console.log(response)
   // store data from the response in mt store object. store this to start a game which need token from user
   store.user = response.user
 }
 
 const onSignInFailure = function () {
-  $('#success-message').hide()
-  $('#error-message').html('Error: Can NOT Sign in!')
+  // $('#success-message').hide()
+  $('#sign-in-message').html('Error: Can NOT Sign in!').css('color', 'red')
 }
 
 const onSignOutSuccess = function () {

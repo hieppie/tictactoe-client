@@ -30,8 +30,10 @@
                   <form id="sign-up-form">
                     <input name="credentials[email]" type="email" placeholder="Email">
                     <input name="credentials[password]" type="password" placeholder="Enter password">
-                    <!-- <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password"> -->
-                    <button type="submit">Sign Up</button>
+                    
+                    <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+                    <button type="submit" class="btn btn-secondary" >Sign Up</button>
+                    <p id="sign-up-message"></p>
                   </form>
                 </div>
 
@@ -40,15 +42,35 @@
                   <form id="sign-in-form">
                     <input name="credentials[email]" type="email" placeholder="Email">
                     <input name="credentials[password]" type="password" placeholder="Enter password">
-                    <button type="submit">Sign In</button>
+                    <button type="submit" class="btn btn-secondary">Sign In</button>
+                    <p id="sign-in-message"></p>
                   </form>
               </div>
+
+              <div class="col-12 box alt-color" id="sign-out-div">
+                <h3>Done for today?</h3>
+                <button id="sign-out-button" class="btn btn-secondary" type="submit">SIGN OUT</button>
+              </div>
+
+              <div class="col-12 box alt-color" id="game-start-div">
+    
+                <button id="game-start-button" class="btn btn-secondary" >Click to start game</button>
+                <div class="divider"></div>
+                <button id="play-again-button" class="btn btn-secondary" >Restart</button>
+                <Section class="game-alert">
+                  <p id="winner-alert"></p>
+                  <p id="tie-alert"></p>
+                </Section>
+              </div>
+
+                  
+
              </div>
           </div>
           
-          <div id="sign-out-div">
+          <!-- <div id="sign-out-div">
             <button id="sign-out-button" type="submit">SIGN OUT</button>
-          </div>
+          </div> -->
 
           <div id="messages">
             <p id="success-message"></p>
@@ -58,7 +80,7 @@
       </section>
 
 
-      <button id="game-start-button">Click to start game</button>
+      <!-- <button id="game-start-button">Click to start game</button> -->
       <!-- <button id="index-games">Index of games</button> -->
 
       <!-- <h3>Show game</h3>
@@ -71,15 +93,15 @@
           <div class="container" >
             <h1>Lets Go!</h1>
             <div id="cells" class="row">
-              <div id="0" data-cell-index= 0 class="col-4 cell alt-color">0</div>
-              <div id="1" data-cell-index= 1 class="col-4 cell alt-color">1</div>
-              <div id="2" data-cell-index= 2 class="col-4 cell alt-color">2</div>
-              <div id="3" data-cell-index= 3 class="col-4 cell alt-color">3</div>
-              <div id="4" data-cell-index= 4 class="col-4 cell alt-color">4</div>
-              <div id="5" data-cell-index= 5 class="col-4 cell alt-color">5</div>
-              <div id="6" data-cell-index= 6 class="col-4 cell alt-color">6</div>
-              <div id="7" data-cell-index= 7 class="col-4 cell alt-color">7</div>
-              <div id="8" data-cell-index= 8 class="col-4 cell alt-color">8</div>
+              <div id="0" data-cell-index= 0 class="col-4 cell alt-color"></div>
+              <div id="1" data-cell-index= 1 class="col-4 cell alt-color"></div>
+              <div id="2" data-cell-index= 2 class="col-4 cell alt-color"></div>
+              <div id="3" data-cell-index= 3 class="col-4 cell alt-color"></div>
+              <div id="4" data-cell-index= 4 class="col-4 cell alt-color"></div>
+              <div id="5" data-cell-index= 5 class="col-4 cell alt-color"></div>
+              <div id="6" data-cell-index= 6 class="col-4 cell alt-color"></div>
+              <div id="7" data-cell-index= 7 class="col-4 cell alt-color"></div>
+              <div id="8" data-cell-index= 8 class="col-4 cell alt-color"></div>
             </div>
           </div>
         </section>
@@ -88,13 +110,10 @@
           <p id="winner-alert"></p>
           <p id="tie-alert"></p>
         </Section>
-
-        <button id="play-again-button" >Play Again</button>
-
+        <!-- <button id="play-again-button" >Play Again</button> -->
       </section>
-     
-      <!-- <img src="https://media0.giphy.com/media/6OLPLKgIWEiER5NAfy/giphy.gif?cid=ecf05e47antt0c8du6t763vdndmfmqqshj765pbohy5umpt3&rid=giphy.gif&ct=g" alt="tic-tac-hero"> -->
 
-     
+      
+    <img src="https://media3.giphy.com/media/w0ikslQmPeQWz3nYVF/giphy.gif?cid=ecf05e47ne78nmb35seszja6wubpxhbdgdr0bxsy5dn1i3wq&rid=giphy.gif&ct=g" alt="tic tac">
     </body>
 </html>
