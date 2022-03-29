@@ -1,5 +1,6 @@
 
 const store = require('./store')
+// const gameEvents = require('./events')
 
 const onSignUpSuccess = function () {
   $('#success-message').html('Signed Up Successfully!')
@@ -47,6 +48,9 @@ const onStartGameSuccess = function (response) {
   console.log(response)
   store.game = response.game
   clearBoard()
+  $('.cell').on('click')
+
+  $('#game').show()
   // store.user = response.user
 }
 const onStartGameFailure = function () {

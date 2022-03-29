@@ -11,8 +11,10 @@ $(() => {
   $('#sign-out-button').on('click', gameEvents.onSignOut)
 
   $('#game-start-button').on('click', gameEvents.onStartGame)
-  $('#sign-out-div, #game-start-button').hide()
+  $('#sign-out-div, #game-start-button, #game').hide()
   $('.cell').on('click', gameEvents.onBoxClick)
+  
+  // $('#reset-button').on('click', gameEvents.onStartGame)
   // $('#reset-button').on('click', gameEvents.onClearBoard())
   // $('.cell').on('click', gameEvents.onUpdateGame)
   // $('.cell').on('click', function () { console.log(this.getAttribute('data-cell-index')) })

@@ -1,5 +1,8 @@
 
-const store = require('./store')
+const store = require('./store.js')
+// const config = require('./config.js')
+
+// url: config.apiUrl + '/games'
 
 const signUp = function (data) {
   return $.ajax({
@@ -43,7 +46,7 @@ const startGame = function (data) {
   })
 }
 
-const updateGame = function (cellIndex, userX, gameOver) {
+const updateGame = function (cellIndex, userValue, gameOver) {
   return $.ajax({
     method: 'PATCH',
     url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
@@ -54,7 +57,7 @@ const updateGame = function (cellIndex, userX, gameOver) {
       game: {
         cell: {
           index: cellIndex,
-          value: userX
+          value: userValue
         },
         over: gameOver
       }
