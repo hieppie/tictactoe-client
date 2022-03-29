@@ -33,3 +33,9 @@ body {
     height:auto;
     display:inline-block;
 }
+
+.btn {
+  border-radius: 10px;
+  text-transform: uppercase;
+  box-shadow: 5px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
