@@ -31,13 +31,13 @@ const onSignInSuccess = function (response) {
 const onSignInFailure = function () {
   // $('#success-message').hide()
   $('#sign-in-message')
-		.html('Error: Can NOT Sign in!')
-		.css('color', 'red', 'font', 'Press Start 2P')
+    .html('Error: Can NOT Sign in!')
+    .css('color', 'red', 'font', 'Press Start 2P')
 }
 
 const onSignOutSuccess = function () {
   $('#sign-out-message').html('<p>you are signed out!</p>')
-  $('#success-message, #error-message, #sign-out-div, #game, #winner-alert, #tie-alert').hide()
+  $('#success-message, #error-message, #sign-out-div, #game, #winner-alert, #tie-alert, #game-start-div').hide()
   $('form').trigger('reset')
   $('#sign-up-div, #sign-in-div, #game-board').show()
   $('#sign-out-message')
