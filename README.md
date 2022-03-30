@@ -25,3 +25,23 @@ This application allows the user to sign up, sign in, and sign out on a server. 
 ## Wireframe
 
 ![Wirefram draft](./app/images/WireFrame.jpg)
+
+## Reference
+
+  - Images
+    - [tic-tac hero](https://media0.giphy.com/media/dLvb1XJ4e9OVB6uWJy/giphy.gif?cid=ecf05e47kcbjalc05axl16ghfoo1rt4knhzo5eavysufp3kk&rid=giphy.gif&ct=g)
+    - [green tic-tac](https://media3.giphy.com/media/hvRhoBF5xVDvrmZCRp/giphy.gif?cid=790b7611fed8f87094e8b1986757547dd526bdfbd30564c6&rid=giphy.gif&ct=s)
+    - [toes1](https://media0.giphy.com/media/loHIRKRjn6Nu2Xixbw/giphy.gif?cid=ecf05e47usey6qd0l32rptbf09u2f55anm9nwxkcslg2zis2&rid=giphy.gif&ct=g)
+    - [toes2](https://media1.giphy.com/media/AGFvTmdx8Jfm4UOPtx/giphy.gif?cid=ecf05e47u4csofn82s9vd9vmzmi35ly9eehl28g7jb5twdtp&rid=giphy.gif&ct=g)
+
+
+  - Font
+    - [Pres Start 2P Google Font](https://fonts.google.com/specimen/Press+Start+2P)
+
+
+  - Videos
+    - [Creating TictacToe Game](https://www.youtube.com/watch?v=x1B9IVrDIxg)
+
+  - Specials Thanks
+    - My instructors
+    - My cohorts who helped me especially Maura and Moe

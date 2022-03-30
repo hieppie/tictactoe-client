@@ -73,10 +73,12 @@ const onBoxClick = function (data) {
   if (userValue[index]) {
     return
   }
+  // setting the players icon 
   const playerIcon = {
     tictac: 'https://i.imgur.com/TLAjlHJ.gif',
     toes: 'https://i.imgur.com/EaQIxes.gif'
   }
+  // x = tictac and o = toes
   const xImage = 'https://i.imgur.com/TLAjlHJ.gif'
   const oImage = 'https://i.imgur.com/EaQIxes.gif'
   // console.log(index)
