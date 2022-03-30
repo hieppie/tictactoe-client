@@ -22,7 +22,14 @@ body {
   height: 80px;
   justify-content: center;
   overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
+
+.cell:hover {
+background-color: rgb(160, 160, 63);
+}
+
 .tictac-hero {
   max-width: 70px;
   max-height: 60px;
@@ -50,6 +57,6 @@ div.cell > .tictac-hero {
   box-shadow: 5px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-h3, button {
+h3, button, #sign-in-message, #sign-out-message, #sign-up-message {
   font-family: 'Press Start 2P', cursive;
 }
