@@ -11,12 +11,18 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="container">
           <div class="row">
             
-            <title class="col-12 box ">Tic-Tac Toes</title>
+            <div class="col-12 box ">
+          
+              <h3>Tic-Tac Toes</h3>
+            </div>
           </div>
         </div>
       
@@ -27,6 +33,7 @@
             <div class="row">
                 <div class="col-12 box alt-color" id="sign-up-div">
                   <h3>Sign Up To Play</h3>
+                  <div class="divider"></div>
                   <form id="sign-up-form">
                     <input name="credentials[email]" type="email" placeholder="Email">
                     <input name="credentials[password]" type="password" placeholder="Enter password">
@@ -34,19 +41,20 @@
                     <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
                     <div class="divider"></div>
                     <button type="submit" class="btn btn-secondary" >Sign Up</button>
-                    <p id="sign-up-message"></p>
+                   
                   </form>
                 </div>
 
                 <div class="col-12 box alt-color" id="sign-in-div">
                   <h3>Sign In To Start Playing</h3>
                   <div class="divider"></div>
+                  <div class="divider"></div>
                   <form id="sign-in-form">
                     <input name="credentials[email]" type="email" placeholder="Email">
                     <input name="credentials[password]" type="password" placeholder="Enter password">
                     <div class="divider"></div>
                     <button type="submit" class="btn btn-secondary">Sign In</button>
-                    <p id="sign-in-message"></p>
+                    
                   </form>
               </div>
 
@@ -54,16 +62,28 @@
                 <h3>Done for today?</h3>
                 <div class="divider"></div>
                 <button id="sign-out-button" class="btn btn-secondary" type="submit">SIGN OUT</button>
+                
               </div>
 
               <div class="col-12 box alt-color" id="game-start-div">
     
-                <button id="game-start-button" class="btn btn-secondary" >Click to start game</button>
+                <button id="game-start-button" class="btn btn-secondary" >Start Game/Restart</button>
                 <div class="divider"></div>
                 <button id="play-again-button" class="btn btn-secondary" >Restart</button>
+                <div class="divider"></div>
+                
+              </div>
+
+              <div class="col-12 box alt-color" id="game-alert">
+                <h3></h3>
+                <div class="divider"></div>
+                <p id="sign-up-message"></p>
+                <p id="sign-in-message"></p>
+                <p id="sign-out-message"></p>
+               
                 <Section class="game-alert">
                   <p id="winner-alert"></p>
-                  <p id="tie-alert"></p>
+                  <h3 id="tie-alert">It's a Draw!</h3>
                 </Section>
               </div>
 
@@ -79,7 +99,6 @@
           <div id="messages">
             <p id="success-message"></p>
             <p id="error-message"></p>
-            <p id="sign-out-message"></p>
           </div>
       </section>
 
@@ -95,7 +114,7 @@
       <section   id="game">
         <section id="game-board">
           <div class="container" >
-            <h1>Lets Go!</h1>
+            <h1></h1>
             <div id="cells" class="row">
               <div id="0" data-cell-index= 0 class="col-4 cell alt-color"></div>
               <div id="1" data-cell-index= 1 class="col-4 cell alt-color"></div>
@@ -118,6 +137,8 @@
       </section>
 
       
-    <img src="https://media3.giphy.com/media/w0ikslQmPeQWz3nYVF/giphy.gif?cid=ecf05e47ne78nmb35seszja6wubpxhbdgdr0bxsy5dn1i3wq&rid=giphy.gif&ct=g" alt="tic tac">
+    <!-- <img id="red-tictac" src="https://media3.giphy.com/media/w0ikslQmPeQWz3nYVF/giphy.gif?cid=ecf05e47ne78nmb35seszja6wubpxhbdgdr0bxsy5dn1i3wq&rid=giphy.gif&ct=g" alt="tic tac">
+
+    <img id="tictac-hero" src="https://media3.giphy.com/media/6OLPLKgIWEiER5NAfy/giphy.gif?cid=790b7611369f55761dc8e9521f0bb6280df51da089022e09&rid=giphy.gif&ct=g" alt=""> -->
     </body>
 </html>

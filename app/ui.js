@@ -9,14 +9,19 @@ const onSignUpSuccess = function () {
 
 const onSignUpFailure = function () {
   $('#sign-up-message').html('Error: Can NOT Sign up. That email has been used').css('color', 'white')
+  $('form').trigger('reset')
 }
 
 const onSignInSuccess = function (response) {
   $('form').trigger('reset')
 
   // $('#sign-up-div, #error-message, #sign-out-message, #sign-in-div').hide()
-  $('#sign-in-message').html('You are signed in and ready to play!').css('color', 'green')
-  // $('#sign-out-div, #game-board, #game-start-button').show()
+  // $('#sign-in-message').html('You are signed in and ready to play!').css('color', 'green')
+  $('#tie-alert, #game, #sign-out-div, #game-start-div').show()
+  $('#sign-up-div, #tie-alert, #sign-in-div, #sign-out-message').hide()
+  $('#sign-in-message')
+    .html('You are signed in and ready to play!')
+    .css('color', 'green')
   console.log(response)
   // store data from the response in mt store object. store this to start a game which need token from user
   store.user = response.user
@@ -29,9 +34,12 @@ const onSignInFailure = function () {
 
 const onSignOutSuccess = function () {
   $('#sign-out-message').html('<p>you are signed out!</p>')
-  $('#success-message, #error-message, #sign-out-div, #game-board').hide()
+  $('#success-message, #error-message, #sign-out-div, #game, #winner-alert, #tie-alert').hide()
   $('form').trigger('reset')
   $('#sign-up-div, #sign-in-div, #game-board').show()
+  $('#sign-out-message')
+    .html('You are signed out')
+    .css('color', 'white').show()
 }
 
 const onSignOutFailure = function () {
@@ -47,10 +55,12 @@ const onStartGameSuccess = function (response) {
   // storing user and game to use when update game. For token and game ID
   // console.log(response)
   store.game = response.game
+  $('#tie-alert, #sign-in-message, #winner-alert').hide()
   clearBoard()
   $('.cell').on('click')
 
-  $('#game').show()
+  $('#game, .game-alert').show()
+
   // store.user = response.user
 }
 const onStartGameFailure = function () {

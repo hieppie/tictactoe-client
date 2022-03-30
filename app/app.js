@@ -14,6 +14,7 @@ $(() => {
   // $('#sign-out-div, #game-start-button, #game').hide()
   // $('#game-start-button').on('click', gameEvents.onStartGame)
   $('#play-again-button').on('click', gameEvents.onStartGame)
+  $('#tie-alert, #game, #sign-out-div, #game-start-div').hide()
 
   // $('#reset-button').on('click', gameEvents.onStartGame)
   // $('#reset-button').on('click', gameEvents.onClearBoard())

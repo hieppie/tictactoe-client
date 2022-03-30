@@ -33,6 +33,7 @@ const onSignIn = function (event) {
 }
 
 const onSignOut = function () {
+  onStartGame()
   gameApi.signOut()
     .then((response) => gameUi.onSignOutSuccess(response))
     .catch(() => gameUi.onSignOutFailure())
@@ -72,13 +73,21 @@ const onBoxClick = function (data) {
   if (userValue[index]) {
     return
   }
+  const playerIcon = {
+    tictac: 'https://i.imgur.com/TLAjlHJ.gif',
+    toes: 'https://i.imgur.com/EaQIxes.gif'
+  }
+  const xImage = 'https://i.imgur.com/TLAjlHJ.gif'
+  const oImage = 'https://i.imgur.com/EaQIxes.gif'
   // console.log(index)
   if (userX) {
-    $(this).text('x')
-    userValue[index] = 'pink slug'
+    $(this).html(
+      $('<img>', { class: 'tictac-hero', src: xImage }))
+    userValue[index] = 'tictac'
   } else {
-    $(this).text('o')
-    userValue[index] = 'green slug'
+    $(this).html(
+      $('<img>', { class: 'tictac-hero', src: oImage }))
+    userValue[index] = 'toes'
   }
   userX = !userX
 
@@ -86,21 +95,23 @@ const onBoxClick = function (data) {
   if (
     userValue[0] === userValue[1] && userValue[1] === userValue[2] && userValue[2] !== ''
   ) {
-    $('#winner-alert').text(userValue[index] + ' Is the Winner')
+    $('#winner-alert').html($('<img>', { class: 'tictac-hero', src: playerIcon[userValue[index]] })).show()
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
   } else if (
     userValue[3] === userValue[4] && userValue[4] === userValue[5] && userValue[5] !== ''
   ) {
-    $('#winner-alert').text(userValue[index] + ' Is the Winner')
+    $('#winner-alert').html(
+      $('<img>', { class: 'tictac-hero', src: playerIcon[userValue[index]] })).show()
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
   } else if (
     userValue[6] === userValue[7] && userValue[7] === userValue[8] && userValue[8] !== ''
   ) {
-    $('#winner-alert').text(userValue[index] + ' Is the Winner')
+    $('#winner-alert').html(
+      $('<img>', { class: 'tictac-hero', src: playerIcon[userValue[index]] })).show()
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
@@ -109,21 +120,24 @@ const onBoxClick = function (data) {
   else if (
     userValue[0] === userValue[3] && userValue[3] === userValue[6] && userValue[6] !== ''
   ) {
-    $('#winner-alert').text(userValue[index] + ' Is the Winner')
+    $('#winner-alert').html(
+      $('<img>', { class: 'tictac-hero', src: playerIcon[userValue[index]] })).show()
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
   } else if (
     userValue[1] === userValue[4] && userValue[4] === userValue[7] && userValue[7] !== ''
   ) {
-    $('#winner-alert').text(userValue[index] + ' Is the Winner')
+    $('#winner-alert').html(
+      $('<img>', { class: 'tictac-hero', src: playerIcon[userValue[index]] })).show()
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
   } else if (
     userValue[2] === userValue[5] && userValue[5] === userValue[8] && userValue[8] !== ''
   ) {
-    $('#winner-alert').text(userValue[index] + ' Is the Winner')
+    $('#winner-alert').html(
+      $('<img>', { class: 'tictac-hero', src: playerIcon[userValue[index]] })).show()
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
@@ -133,14 +147,16 @@ const onBoxClick = function (data) {
   else if (
     userValue[0] === userValue[4] && userValue[4] === userValue[8] && userValue[8] !== ''
   ) {
-    $('#winner-alert').text(userValue[index] + ' Is the Winner')
+    $('#winner-alert').html(
+      $('<img>', { class: 'tictac-hero', src: playerIcon[userValue[index]] })).show()
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
   } else if (
     userValue[2] === userValue[4] && userValue[4] === userValue[6] && userValue[6] !== ''
   ) {
-    $('#winner-alert').text(userValue[index] + ' Is the Winner')
+    $('#winner-alert').html(
+      $('<img>', { class: 'tictac-hero', src: playerIcon[userValue[index]] })).show()
     gameOver = !gameOver
     console.log(gameOver)
     $('.cell').off('click')
@@ -151,7 +167,7 @@ const onBoxClick = function (data) {
   ) {
     gameOver = !gameOver
     console.log(gameOver)
-    $('#tie-alert').text("It's a tie!")
+    $('#tie-alert').show()
     $('.cell').off('click')
   }
 
