@@ -19,7 +19,7 @@ const onSignInSuccess = function (response) {
   // $('#sign-up-div, #error-message, #sign-out-message, #sign-in-div').hide()
   // $('#sign-in-message').html('You are signed in and ready to play!').css('color', 'green')
   $('#tie-alert, #game, #sign-out-div, #game-start-div').show()
-  $('#sign-up-message, #tie-alert, #sign-in-div, #sign-out-message').hide()
+  $('#sign-up-message, #tie-alert, #sign-in-div, #sign-out-message, #sign-up-div').hide()
   $('#sign-in-message')
     .html('You are signed in. Click Start Game to play!')
     .css('color', 'gold').show()
