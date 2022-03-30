@@ -36,7 +36,7 @@ This application allows the user to sign up, sign in, and sign out on a server. 
 
 
   - Font
-    - [Pres Start 2P Google Font](https://fonts.google.com/specimen/Press+Start+2P)
+    - [Press Start 2P Google Font](https://fonts.google.com/specimen/Press+Start+2P)
 
 
   - Videos
