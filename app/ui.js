@@ -3,13 +3,13 @@ const store = require('./store')
 // const gameEvents = require('./events')
 
 const onSignUpSuccess = function () {
-  $('#sign-up-message').html('Signed Up Successfully!').css('color', 'green')
+  $('#sign-up-message').html('Signed Up Successfully!').css('color', 'gold')
   $('form').trigger('reset')
   $('#sign-out-message').hide()
 }
 
 const onSignUpFailure = function () {
-  $('#sign-up-message').html('Error: Can NOT Sign up. That email has been used').css('color', 'white')
+  $('#sign-up-message').html('Error: Can NOT Sign up').css('color', 'red')
   $('form').trigger('reset')
 }
 
@@ -22,7 +22,7 @@ const onSignInSuccess = function (response) {
   $('#sign-up-message, #tie-alert, #sign-in-div, #sign-out-message').hide()
   $('#sign-in-message')
     .html('You are signed in. Click Start Game to play!')
-    .css('color', 'green').show()
+    .css('color', 'gold').show()
   console.log(response)
   // store data from the response in mt store object. store this to start a game which need token from user
   store.user = response.user
@@ -42,7 +42,7 @@ const onSignOutSuccess = function () {
   $('#sign-up-div, #sign-in-div, #game-board').show()
   $('#sign-out-message')
     .html('You are signed out')
-    .css('color', 'white').show()
+    .css('color', 'gold').show()
 }
 
 const onSignOutFailure = function () {
