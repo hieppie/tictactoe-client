@@ -1,11 +1,11 @@
 
 # Tic-Tac Toes: A duel between Tic-Tac and Toes
 
-This application allows the user to sign up, sign in, and sign out on a server. A signed in user/player can play a the game of Tic-Tac-Toes. To stop playing the user can sign out. I want to make a simple Tic-Tac-Toe game with just a little twist to the title and the theme and making it Tic-Tac vs Toes. 
+This application allows the user to sign up, sign in, and sign out on a server. A signed in user/player can play a the game of Tic-Tac-Toes. To stop playing the user can sign out. This is a simple Tic-Tac-Toe game with just a little twist to the title and the theme and making it Tic-Tac vs Toes. 
 
 ## Important Links
 
-- [Tic-Tac Vs Toes](https://hieppie.github.io/tictactoe-client/)
+- [Tic-Tac Vs Toes Game](https://hieppie.github.io/tictactoe-client/)
 - [Tic-Tac-Toe Rules](https://www.wikihow.com/Play-Tic-Tac-Toe)
 
 
@@ -24,9 +24,9 @@ This application allows the user to sign up, sign in, and sign out on a server. 
 
 ## Wireframe
 
-![Wirefram draft](./app/images/WireFrame.jpg)
+![Wireframe draft](./app/images/WireFrame.jpg)
 
-## Reference
+## Reference Links
 
   - Images
     - [tic-tac hero](https://media0.giphy.com/media/dLvb1XJ4e9OVB6uWJy/giphy.gif?cid=ecf05e47kcbjalc05axl16ghfoo1rt4knhzo5eavysufp3kk&rid=giphy.gif&ct=g)
@@ -42,6 +42,6 @@ This application allows the user to sign up, sign in, and sign out on a server. 
   - Videos
     - [Creating TictacToe Game](https://www.youtube.com/watch?v=x1B9IVrDIxg)
 
-  - Specials Thanks
-    - My instructors
+  - Special Thanks
+    - My GA instructors
     - My cohorts who helped me especially Maura and Moe
